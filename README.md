@@ -34,17 +34,17 @@
     
    `sudo chmod 666 auth`
     
-    Pick your favourite server vpn file (Low load ones are usually ideal) and edit it with `nano`
+   Pick your favourite server vpn file (Low load ones are usually ideal) and edit it with `nano`
     
-    Change the line containing `auth-user-pass` to `auth-user-pass auth` or whatever you named your auth file
+   Change the line containing `auth-user-pass` to `auth-user-pass auth` or whatever you named your auth file
    
-    ** The VPN should now connect without authentication **
+   ** The VPN should now connect without authentication **
     
-    Navigate to the services directory with `cd /etc/systemd/system/`
+   Navigate to the services directory with `cd /etc/systemd/system/`
     
-    `sudo nano vpn.service`, and populate the file with the following
+   `sudo nano vpn.service`, and populate the file with the following
     
-    `
+   `
     [Unit]
 Description = Anonymization Service
 After = network.target
