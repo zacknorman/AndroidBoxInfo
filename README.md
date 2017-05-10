@@ -42,16 +42,10 @@
     
    Navigate to the services directory with `cd /etc/systemd/system/`
     
-   `sudo nano vpn.service`, and populate the file with the following
-    
-   `
-    [Unit]
-Description = Anonymization Service
-After = network.target
-
-[Service]
-ExecStart = sudo openvpn /etc/openvpn/ca40.nordvpn.com.tcp443.ovpn ** CHANGE THIS TO YOUR PREFERRED SERVER **
-
-[Install]
-WantedBy = multi-user.target
-`
+   `sudo nano vpn.service`, and populate the file with your preferred service settings
+   
+   `sudo systemctl enable vpn.service`
+   
+   And that's it!
+   
+   
