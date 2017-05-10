@@ -34,4 +34,24 @@
     
    `sudo chmod 666 auth`
     
-    # To Be Continued...
+    Pick your favourite server vpn file (Low load ones are usually ideal) and edit it with `nano`
+    
+    Change the line containing `auth-user-pass` to `auth-user-pass auth` or whatever you named your auth file
+   
+    ** The VPN should now connect without authentication **
+    
+    Navigate to the services directory with `cd /etc/systemd/system/`
+    
+    `sudo nano vpn.service`, and populate the file with the following
+    
+    `
+    [Unit]
+Description = Anonymization Service
+After = network.target
+
+[Service]
+ExecStart = sudo openvpn /etc/openvpn/ca40.nordvpn.com.tcp443.ovpn ** CHANGE THIS TO YOUR PREFERRED SERVER **
+
+[Install]
+WantedBy = multi-user.target
+`
